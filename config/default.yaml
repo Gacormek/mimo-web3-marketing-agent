@@ -1,0 +1,57 @@
+# MiMo Web3 Marketing Agent Configuration
+
+llm:
+  base_url: "http://43.153.206.68:20128/v1"
+  model: "xmtp/mimo-v2.5-pro"
+  api_key: "${LLM_API_KEY}"
+  max_retries: 3
+  timeout: 120
+
+web3:
+  alchemy_api_key: "${ALCHEMY_API_KEY}"
+  default_chain: "ethereum"
+  supported_chains:
+    - ethereum
+    - polygon
+    - arbitrum
+    - optimism
+    - base
+    - bsc
+    - avalanche
+    - zksync
+    - linea
+
+rag:
+  persist_dir: "./data/chromadb"
+  chunk_size: 500
+  chunk_overlap: 50
+  max_context_tokens: 2000
+
+social:
+  twitter:
+    enabled: true
+    bearer_token: "${TWITTER_BEARER_TOKEN}"
+  discord:
+    enabled: true
+    bot_token: "${DISCORD_BOT_TOKEN}"
+  telegram:
+    enabled: true
+    bot_token: "${TELEGRAM_BOT_TOKEN}"
+
+agents:
+  content:
+    default_temperature: 0.8
+    max_tokens: 2048
+  analytics:
+    sample_size: 500
+    whale_threshold_usd: 10000
+  narrative:
+    update_interval_hours: 6
+  social:
+    default_frequency: "daily"
+    default_duration_days: 7
+
+server:
+  host: "0.0.0.0"
+  port: 8080
+  cors_origins: ["*"]
