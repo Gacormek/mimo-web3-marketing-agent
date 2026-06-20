@@ -17,7 +17,7 @@ logger = logging.getLogger("mimo-marketing.llm")
 # Default to MiMo-compatible endpoint
 DEFAULT_BASE_URL = os.getenv("LLM_BASE_URL")
 DEFAULT_MODEL = os.getenv("LLM_MODEL", "xmtp/mimo-v2.5-pro")
-DEFAULT_API_KEY = os.getenv("LLM_API_KEY", "your_api_key_here")
+DEFAULT_API_KEY = os.getenv("LLM_API_KEY")
 
 
 @dataclass
