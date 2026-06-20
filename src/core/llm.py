@@ -15,7 +15,7 @@ import httpx
 logger = logging.getLogger("mimo-marketing.llm")
 
 # Default to MiMo-compatible endpoint
-DEFAULT_BASE_URL = os.getenv("LLM_BASE_URL", "http://43.153.206.68:20128/v1")
+DEFAULT_BASE_URL = os.getenv("LLM_BASE_URL")
 DEFAULT_MODEL = os.getenv("LLM_MODEL", "xmtp/mimo-v2.5-pro")
 DEFAULT_API_KEY = os.getenv("LLM_API_KEY", "sk-hermes")
 
